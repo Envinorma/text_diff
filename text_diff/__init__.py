@@ -13,4 +13,14 @@ def get_module_version():
     return __version__
 
 
-from .example import Example  # noqa: F401
+from .extract_diff import (  # noqa: F401
+    AddedLine,
+    DiffLine,
+    EditOperation,
+    Mask,
+    ModifiedLine,
+    RemovedLine,
+    TextDifferences,
+    UnchangedLine,
+    text_differences,
+)

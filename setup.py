@@ -17,9 +17,11 @@ test_requirements = [
     "codecov>=2.1.4",
     "flake8>=3.8.3",
     "flake8-debugger>=3.2.1",
+    "isort>=5.7.0",
     "pytest>=5.4.3",
     "pytest-cov>=2.9.0",
     "pytest-raises>=0.11",
+    "pytest-mypy>=0.8.0",
 ]
 
 dev_requirements = [
@@ -46,7 +48,7 @@ extra_requirements = {
     "all": [
         *requirements,
         *dev_requirements,
-    ]
+    ],
 }
 
 setup(
@@ -62,11 +64,6 @@ setup(
         "Programming Language :: Python :: 3.9",
     ],
     description="Python text differences computer",
-    entry_points={
-        "console_scripts": [
-            "my_example=text_diff.bin.my_example:main"
-        ],
-    },
     install_requires=requirements,
     license="MIT license",
     long_description=readme,
@@ -80,7 +77,7 @@ setup(
     test_suite="text_diff/tests",
     tests_require=test_requirements,
     extras_require=extra_requirements,
-    url="https://github.com/remidbs/text_diff",
+    url="https://github.com/envinorma/text_diff",
     # Do not edit this string manually, always use bumpversion
     # Details in CONTRIBUTING.rst
     version="0.0.0",
