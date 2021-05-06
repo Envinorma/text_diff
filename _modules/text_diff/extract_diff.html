@@ -1,0 +1,392 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>text_diff.extract_diff &mdash; Text Diff 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Text Diff
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../installation.html#stable-release">Stable release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../installation.html#from-sources">From sources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">Package modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../text_diff.html">text_diff package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../text_diff.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../text_diff.html#module-text_diff.extract_diff">text_diff.extract_diff module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../text_diff.html#module-text_diff">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing.html#get-started">Get Started!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing.html#deploying">Deploying</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Text Diff</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../text_diff.html">text_diff</a> &raquo;</li>
+        
+      <li>text_diff.extract_diff</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for text_diff.extract_diff</h1><div class="highlight"><pre>
+<span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="kn">import</span> <span class="nn">difflib</span>
+<span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Union</span>
+
+
+<div class="viewcode-block" id="RemovedLine"><a class="viewcode-back" href="../../text_diff.html#text_diff.extract_diff.RemovedLine">[docs]</a><span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">RemovedLine</span><span class="p">:</span>
+    <span class="n">content</span><span class="p">:</span> <span class="nb">str</span></div>
+
+
+<div class="viewcode-block" id="AddedLine"><a class="viewcode-back" href="../../text_diff.html#text_diff.extract_diff.AddedLine">[docs]</a><span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">AddedLine</span><span class="p">:</span>
+    <span class="n">content</span><span class="p">:</span> <span class="nb">str</span></div>
+
+
+<div class="viewcode-block" id="EditOperation"><a class="viewcode-back" href="../../text_diff.html#text_diff.extract_diff.EditOperation">[docs]</a><span class="k">class</span> <span class="nc">EditOperation</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+    <span class="n">MUTATION</span> <span class="o">=</span> <span class="s1">&#39;^&#39;</span>
+    <span class="n">ADDITION</span> <span class="o">=</span> <span class="s1">&#39;+&#39;</span>
+    <span class="n">DELETION</span> <span class="o">=</span> <span class="s1">&#39;-&#39;</span>
+    <span class="n">UNCHANGED</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span></div>
+
+
+<div class="viewcode-block" id="Mask"><a class="viewcode-back" href="../../text_diff.html#text_diff.extract_diff.Mask">[docs]</a><span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">Mask</span><span class="p">:</span>
+    <span class="n">elements</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">EditOperation</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;&quot;&#39;</span> <span class="o">+</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">el</span><span class="o">.</span><span class="n">value</span> <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">elements</span><span class="p">])</span> <span class="o">+</span> <span class="s1">&#39;&quot;&#39;</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ModifiedLine"><a class="viewcode-back" href="../../text_diff.html#text_diff.extract_diff.ModifiedLine">[docs]</a><span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">ModifiedLine</span><span class="p">:</span>
+    <span class="n">content_before</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">mask_before</span><span class="p">:</span> <span class="n">Mask</span>
+    <span class="n">content_after</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">mask_after</span><span class="p">:</span> <span class="n">Mask</span></div>
+
+
+<div class="viewcode-block" id="UnchangedLine"><a class="viewcode-back" href="../../text_diff.html#text_diff.extract_diff.UnchangedLine">[docs]</a><span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">UnchangedLine</span><span class="p">:</span>
+    <span class="n">content</span><span class="p">:</span> <span class="nb">str</span></div>
+
+
+<span class="n">DiffLine</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span><span class="n">RemovedLine</span><span class="p">,</span> <span class="n">AddedLine</span><span class="p">,</span> <span class="n">ModifiedLine</span><span class="p">,</span> <span class="n">UnchangedLine</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="TextDifferences"><a class="viewcode-back" href="../../text_diff.html#text_diff.extract_diff.TextDifferences">[docs]</a><span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">TextDifferences</span><span class="p">:</span>
+    <span class="n">diff_lines</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">DiffLine</span><span class="p">]</span></div>
+
+
+<span class="k">def</span> <span class="nf">_extract_first_chars</span><span class="p">(</span><span class="n">strs</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">x</span><span class="p">[:</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">strs</span><span class="p">])</span>
+
+
+<span class="k">def</span> <span class="nf">_parse_mask</span><span class="p">(</span><span class="n">mask_str</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Mask</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">Mask</span><span class="p">([</span><span class="n">EditOperation</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">mask_str</span><span class="p">])</span>
+
+
+<span class="k">def</span> <span class="nf">_empty_mask</span><span class="p">(</span><span class="n">size</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Mask</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">Mask</span><span class="p">([</span><span class="n">EditOperation</span><span class="o">.</span><span class="n">UNCHANGED</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">size</span><span class="p">)])</span>
+
+
+<span class="k">def</span> <span class="nf">_build_modified_line</span><span class="p">(</span><span class="n">difflines</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">ModifiedLine</span><span class="p">:</span>
+    <span class="n">first_chars</span> <span class="o">=</span> <span class="n">_extract_first_chars</span><span class="p">(</span><span class="n">difflines</span><span class="p">)</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">difflines</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">first_chars</span> <span class="o">==</span> <span class="s1">&#39;-+?&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">ModifiedLine</span><span class="p">(</span><span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">_empty_mask</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">])),</span> <span class="n">lines</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">_parse_mask</span><span class="p">(</span><span class="n">lines</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+    <span class="k">if</span> <span class="n">first_chars</span> <span class="o">==</span> <span class="s1">&#39;+-?&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">ModifiedLine</span><span class="p">(</span><span class="n">lines</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">_parse_mask</span><span class="p">(</span><span class="n">lines</span><span class="p">[</span><span class="mi">2</span><span class="p">]),</span> <span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">_empty_mask</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">])))</span>
+    <span class="k">if</span> <span class="n">first_chars</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;+?-&#39;</span><span class="p">):</span>
+        <span class="n">deletion_mask</span> <span class="o">=</span> <span class="n">_parse_mask</span><span class="p">(</span><span class="n">lines</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span> <span class="k">if</span> <span class="n">first_chars</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;?&#39;</span> <span class="k">else</span> <span class="n">_empty_mask</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lines</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+        <span class="k">return</span> <span class="n">ModifiedLine</span><span class="p">(</span><span class="n">lines</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">deletion_mask</span><span class="p">,</span> <span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">_parse_mask</span><span class="p">(</span><span class="n">lines</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+    <span class="k">if</span> <span class="n">first_chars</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;-?+&#39;</span><span class="p">):</span>
+        <span class="n">addition_mask</span> <span class="o">=</span> <span class="n">_parse_mask</span><span class="p">(</span><span class="n">lines</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span> <span class="k">if</span> <span class="n">first_chars</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;?&#39;</span> <span class="k">else</span> <span class="n">_empty_mask</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lines</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+        <span class="k">return</span> <span class="n">ModifiedLine</span><span class="p">(</span><span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">_parse_mask</span><span class="p">(</span><span class="n">lines</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">lines</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">addition_mask</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Unhandled modification for first_chars sequence </span><span class="si">{</span><span class="n">first_chars</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_apply_mask</span><span class="p">(</span><span class="n">line</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">mask</span><span class="p">:</span> <span class="n">Mask</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="n">chars</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">char</span><span class="p">,</span> <span class="n">operation</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">mask</span><span class="o">.</span><span class="n">elements</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">operation</span> <span class="o">==</span> <span class="n">EditOperation</span><span class="o">.</span><span class="n">UNCHANGED</span><span class="p">:</span>
+            <span class="n">chars</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+    <span class="n">chars</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">mask</span><span class="o">.</span><span class="n">elements</span><span class="p">)</span> <span class="p">:])</span>
+    <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">chars</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_is_modified_line_consistent</span><span class="p">(</span><span class="n">line</span><span class="p">:</span> <span class="n">ModifiedLine</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="n">before</span> <span class="o">=</span> <span class="n">_apply_mask</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">content_before</span><span class="p">,</span> <span class="n">line</span><span class="o">.</span><span class="n">mask_before</span><span class="p">)</span>
+    <span class="n">after</span> <span class="o">=</span> <span class="n">_apply_mask</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">content_after</span><span class="p">,</span> <span class="n">line</span><span class="o">.</span><span class="n">mask_after</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">before</span> <span class="o">==</span> <span class="n">after</span>
+
+
+<span class="k">def</span> <span class="nf">_build_difflines</span><span class="p">(</span><span class="n">difflines</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">DiffLine</span><span class="p">]:</span>
+    <span class="sd">&quot;&quot;&quot;difflib output parser</span>
+<span class="sd">    - if nothing at the beginning of the diffline: unchanged line</span>
+<span class="sd">    - if three consecutive lines starting with -?+ or +?- and potentially followed by</span>
+<span class="sd">      one line starting with &#39;?&#39; -&gt; modified line</span>
+<span class="sd">    - if three consecutive lines starting with -+? or +-? -&gt; modified line</span>
+<span class="sd">      (beware, if it actually is -+?-?, the +?-? has the priority)</span>
+<span class="sd">    - otherwise, deletion if line starts with &#39;-&#39;, addition if line starts with &#39;+&#39;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">cursor</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">res</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">DiffLine</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">cursor</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">difflines</span><span class="p">):</span>
+            <span class="k">break</span>
+        <span class="n">current_line</span> <span class="o">=</span> <span class="n">difflines</span><span class="p">[</span><span class="n">cursor</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">current_line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">):</span>  <span class="c1"># line is common to both texts</span>
+            <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">UnchangedLine</span><span class="p">(</span><span class="n">current_line</span><span class="p">[</span><span class="mi">2</span><span class="p">:]))</span>
+            <span class="n">cursor</span> <span class="o">=</span> <span class="n">cursor</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="k">continue</span>
+        <span class="n">first_chars</span> <span class="o">=</span> <span class="n">_extract_first_chars</span><span class="p">(</span><span class="n">difflines</span><span class="p">[</span><span class="n">cursor</span> <span class="p">:</span> <span class="n">cursor</span> <span class="o">+</span> <span class="mi">4</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">first_chars</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;-?+?&#39;</span><span class="p">,</span> <span class="s1">&#39;+?-?&#39;</span><span class="p">):</span>
+            <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_build_modified_line</span><span class="p">(</span><span class="n">difflines</span><span class="p">[</span><span class="n">cursor</span> <span class="p">:</span> <span class="n">cursor</span> <span class="o">+</span> <span class="mi">4</span><span class="p">]))</span>
+            <span class="n">cursor</span> <span class="o">+=</span> <span class="mi">4</span>
+            <span class="k">continue</span>
+        <span class="k">if</span> <span class="n">first_chars</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;-?+&#39;</span><span class="p">,</span> <span class="s1">&#39;+?-&#39;</span><span class="p">,</span> <span class="s1">&#39;-+?&#39;</span><span class="p">,</span> <span class="s1">&#39;+-?&#39;</span><span class="p">):</span>
+            <span class="n">candidate</span> <span class="o">=</span> <span class="n">_build_modified_line</span><span class="p">(</span><span class="n">difflines</span><span class="p">[</span><span class="n">cursor</span> <span class="p">:</span> <span class="n">cursor</span> <span class="o">+</span> <span class="mi">3</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">_is_modified_line_consistent</span><span class="p">(</span><span class="n">candidate</span><span class="p">):</span>
+                <span class="c1"># above is a necessary check because it could be pattern &#39;-&#39; &#39;+?-?&#39; if starts with &#39;-+?&#39;</span>
+                <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">candidate</span><span class="p">)</span>
+                <span class="n">cursor</span> <span class="o">+=</span> <span class="mi">3</span>
+                <span class="k">continue</span>
+        <span class="k">if</span> <span class="n">current_line</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;-&#39;</span><span class="p">:</span>
+            <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">RemovedLine</span><span class="p">(</span><span class="n">current_line</span><span class="p">[</span><span class="mi">2</span><span class="p">:]))</span>
+            <span class="n">cursor</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">continue</span>
+        <span class="k">if</span> <span class="n">current_line</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;+&#39;</span><span class="p">:</span>
+            <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">AddedLine</span><span class="p">(</span><span class="n">current_line</span><span class="p">[</span><span class="mi">2</span><span class="p">:]))</span>
+            <span class="n">cursor</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">continue</span>
+        <span class="n">debug_start</span> <span class="o">=</span> <span class="n">cursor</span> <span class="o">-</span> <span class="mi">5</span> <span class="k">if</span> <span class="n">cursor</span> <span class="o">&gt;=</span> <span class="mi">5</span> <span class="k">else</span> <span class="mi">0</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s1">&#39;Unhandled difflines sequence (</span><span class="si">{</span><span class="n">first_chars</span><span class="si">}</span><span class="s1">) :&#39;</span>
+            <span class="sa">f</span><span class="s1">&#39; </span><span class="si">{</span><span class="n">difflines</span><span class="p">[</span><span class="n">debug_start</span> <span class="p">:</span> <span class="n">cursor</span> <span class="o">+</span> <span class="mi">4</span><span class="p">]</span><span class="si">}</span><span class="se">\n</span><span class="s1">Diff so far: </span><span class="si">{</span><span class="n">res</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:]</span><span class="si">}</span><span class="s1">&#39;</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">res</span>
+
+
+<div class="viewcode-block" id="text_differences"><a class="viewcode-back" href="../../text_diff.html#text_diff.extract_diff.text_differences">[docs]</a><span class="k">def</span> <span class="nf">text_differences</span><span class="p">(</span><span class="n">original_text</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">new_text_version</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">TextDifferences</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Builds text differences from input texts.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    original_text: List[str]</span>
+<span class="sd">        original text (as a list of lines)</span>
+<span class="sd">    new_text_version: List[str]</span>
+<span class="sd">        new text version (as a list of lines)</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    text_differences: TextDifferences</span>
+<span class="sd">        TextDifferences object built on top of diffline output</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">diffs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">difflib</span><span class="o">.</span><span class="n">Differ</span><span class="p">()</span><span class="o">.</span><span class="n">compare</span><span class="p">(</span><span class="n">original_text</span><span class="p">,</span> <span class="n">new_text_version</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">TextDifferences</span><span class="p">(</span><span class="n">_build_difflines</span><span class="p">(</span><span class="n">diffs</span><span class="p">))</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Rémi Delbouys.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,21 +1,13 @@
 text\_diff package
 ==================
 
-Subpackages
------------
-
-.. toctree::
-   :maxdepth: 4
-
-   text_diff.bin
-
 Submodules
 ----------
 
-text\_diff.example module
--------------------------
+text\_diff.extract\_diff module
+-------------------------------
 
-.. automodule:: text_diff.example
+.. automodule:: text_diff.extract_diff
    :members:
    :undoc-members:
    :show-inheritance:

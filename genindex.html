@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Index &mdash; Text Diff 0.0.0 documentation</title>
+  <title>Index &mdash; Text Diff 0.0.1 documentation</title>
   
 
   
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                0.0.0
+                0.0.1
               </div>
             
           
@@ -96,12 +96,8 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="modules.html">Package modules</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="text_diff.html">text_diff package</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="text_diff.html#subpackages">Subpackages</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="text_diff.bin.html">text_diff.bin package</a></li>
-</ul>
-</li>
 <li class="toctree-l3"><a class="reference internal" href="text_diff.html#submodules">Submodules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="text_diff.html#module-text_diff.example">text_diff.example module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="text_diff.html#module-text_diff.extract_diff">text_diff.extract_diff module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="text_diff.html#module-text_diff">Module contents</a></li>
 </ul>
 </li>
@@ -182,19 +178,44 @@
 
 <div class="genindex-jumpbox">
  <a href="#A"><strong>A</strong></a>
+ | <a href="#C"><strong>C</strong></a>
  | <a href="#D"><strong>D</strong></a>
  | <a href="#E"><strong>E</strong></a>
  | <a href="#G"><strong>G</strong></a>
  | <a href="#M"><strong>M</strong></a>
+ | <a href="#R"><strong>R</strong></a>
  | <a href="#T"><strong>T</strong></a>
  | <a href="#U"><strong>U</strong></a>
- | <a href="#V"><strong>V</strong></a>
  
 </div>
 <h2 id="A">A</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="text_diff.bin.html#text_diff.bin.my_example.Args">Args (class in text_diff.bin.my_example)</a>
+      <li><a href="text_diff.html#text_diff.extract_diff.AddedLine">AddedLine (class in text_diff.extract_diff)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="text_diff.html#text_diff.extract_diff.EditOperation.ADDITION">ADDITION (text_diff.extract_diff.EditOperation attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="C">C</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="text_diff.html#text_diff.extract_diff.AddedLine.content">content (text_diff.extract_diff.AddedLine attribute)</a>
+
+      <ul>
+        <li><a href="text_diff.html#text_diff.extract_diff.RemovedLine.content">(text_diff.extract_diff.RemovedLine attribute)</a>
+</li>
+        <li><a href="text_diff.html#text_diff.extract_diff.UnchangedLine.content">(text_diff.extract_diff.UnchangedLine attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="text_diff.html#text_diff.extract_diff.ModifiedLine.content_after">content_after (text_diff.extract_diff.ModifiedLine attribute)</a>
+</li>
+      <li><a href="text_diff.html#text_diff.extract_diff.ModifiedLine.content_before">content_before (text_diff.extract_diff.ModifiedLine attribute)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -202,11 +223,11 @@
 <h2 id="D">D</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="text_diff.bin.html#text_diff.bin.my_example.Args.DEFAULT_FIRST">DEFAULT_FIRST (text_diff.bin.my_example.Args attribute)</a>
+      <li><a href="text_diff.html#text_diff.extract_diff.EditOperation.DELETION">DELETION (text_diff.extract_diff.EditOperation attribute)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="text_diff.bin.html#text_diff.bin.my_example.Args.DEFAULT_SECOND">DEFAULT_SECOND (text_diff.bin.my_example.Args attribute)</a>
+      <li><a href="text_diff.html#text_diff.extract_diff.TextDifferences.diff_lines">diff_lines (text_diff.extract_diff.TextDifferences attribute)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -214,7 +235,11 @@
 <h2 id="E">E</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="text_diff.html#text_diff.example.Example">Example (class in text_diff.example)</a>
+      <li><a href="text_diff.html#text_diff.extract_diff.EditOperation">EditOperation (class in text_diff.extract_diff)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="text_diff.html#text_diff.extract_diff.Mask.elements">elements (text_diff.extract_diff.Mask attribute)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -225,32 +250,40 @@
       <li><a href="text_diff.html#text_diff.get_module_version">get_module_version() (in module text_diff)</a>
 </li>
   </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="text_diff.html#text_diff.example.Example.get_previous_value">get_previous_value() (text_diff.example.Example method)</a>
-</li>
-      <li><a href="text_diff.html#text_diff.example.Example.get_value">get_value() (text_diff.example.Example method)</a>
-</li>
-  </ul></td>
 </tr></table>
 
 <h2 id="M">M</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="text_diff.bin.html#text_diff.bin.my_example.main">main() (in module text_diff.bin.my_example)</a>
+      <li><a href="text_diff.html#text_diff.extract_diff.Mask">Mask (class in text_diff.extract_diff)</a>
 </li>
+      <li><a href="text_diff.html#text_diff.extract_diff.ModifiedLine.mask_after">mask_after (text_diff.extract_diff.ModifiedLine attribute)</a>
+</li>
+      <li><a href="text_diff.html#text_diff.extract_diff.ModifiedLine.mask_before">mask_before (text_diff.extract_diff.ModifiedLine attribute)</a>
+</li>
+      <li><a href="text_diff.html#text_diff.extract_diff.ModifiedLine">ModifiedLine (class in text_diff.extract_diff)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     module
 
       <ul>
         <li><a href="text_diff.html#module-text_diff">text_diff</a>
 </li>
-        <li><a href="text_diff.bin.html#module-text_diff.bin">text_diff.bin</a>
-</li>
-        <li><a href="text_diff.bin.html#module-text_diff.bin.my_example">text_diff.bin.my_example</a>
-</li>
-        <li><a href="text_diff.html#module-text_diff.example">text_diff.example</a>
+        <li><a href="text_diff.html#module-text_diff.extract_diff">text_diff.extract_diff</a>
 </li>
       </ul></li>
+      <li><a href="text_diff.html#text_diff.extract_diff.EditOperation.MUTATION">MUTATION (text_diff.extract_diff.EditOperation attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="R">R</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="text_diff.html#text_diff.extract_diff.RemovedLine">RemovedLine (class in text_diff.extract_diff)</a>
+</li>
   </ul></td>
 </tr></table>
 
@@ -265,43 +298,29 @@
 </li>
       </ul></li>
       <li>
-    text_diff.bin
+    text_diff.extract_diff
 
       <ul>
-        <li><a href="text_diff.bin.html#module-text_diff.bin">module</a>
+        <li><a href="text_diff.html#module-text_diff.extract_diff">module</a>
 </li>
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li>
-    text_diff.bin.my_example
-
-      <ul>
-        <li><a href="text_diff.bin.html#module-text_diff.bin.my_example">module</a>
+      <li><a href="text_diff.html#text_diff.extract_diff.text_differences">text_differences() (in module text_diff.extract_diff)</a>
 </li>
-      </ul></li>
-      <li>
-    text_diff.example
-
-      <ul>
-        <li><a href="text_diff.html#module-text_diff.example">module</a>
+      <li><a href="text_diff.html#text_diff.extract_diff.TextDifferences">TextDifferences (class in text_diff.extract_diff)</a>
 </li>
-      </ul></li>
   </ul></td>
 </tr></table>
 
 <h2 id="U">U</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="text_diff.html#text_diff.example.Example.update_value">update_value() (text_diff.example.Example method)</a>
+      <li><a href="text_diff.html#text_diff.extract_diff.EditOperation.UNCHANGED">UNCHANGED (text_diff.extract_diff.EditOperation attribute)</a>
 </li>
   </ul></td>
-</tr></table>
-
-<h2 id="V">V</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="text_diff.html#text_diff.example.Example.values">values() (text_diff.example.Example property)</a>
+      <li><a href="text_diff.html#text_diff.extract_diff.UnchangedLine">UnchangedLine (class in text_diff.extract_diff)</a>
 </li>
   </ul></td>
 </tr></table>

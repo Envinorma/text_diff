@@ -32,13 +32,13 @@ You can either clone the public repository:
 
 .. code-block:: console
 
-    $ git clone git://github.com/remidbs/text_diff
+    $ git clone git://github.com/envinorma/text_diff
 
 Or download the `tarball`_:
 
 .. code-block:: console
 
-    $ curl  -OL https://github.com/remidbs/text_diff/tarball/main
+    $ curl  -OL https://github.com/envinorma/text_diff/tarball/main
 
 Once you have a copy of the source, you can install it with:
 
@@ -47,5 +47,5 @@ Once you have a copy of the source, you can install it with:
     $ python setup.py install
 
 
-.. _Github repo: https://github.com/remidbs/text_diff
-.. _tarball: https://github.com/remidbs/text_diff/tarball/main
+.. _Github repo: https://github.com/envinorma/text_diff
+.. _tarball: https://github.com/envinorma/text_diff/tarball/main
