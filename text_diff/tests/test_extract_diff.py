@@ -178,3 +178,10 @@ def test_is_modified_line_consistent():
     assert _is_modified_line_consistent(ModifiedLine("xxxxx", _parse_mask(" -"), "xxxx", _parse_mask("")))
     assert _is_modified_line_consistent(ModifiedLine("xxxxx", _parse_mask(" -"), "xyxxx", _parse_mask(" -")))
     assert _is_modified_line_consistent(ModifiedLine("xxxxx", _parse_mask(" -"), "xyxxx", _parse_mask(" ^")))
+
+
+def test_nb_modifications():
+    assert TextDifferences([UnchangedLine(''), UnchangedLine('')]).nb_modifications() == 0
+    assert TextDifferences([UnchangedLine(''), AddedLine('')]).nb_modifications() == 1
+    assert TextDifferences([]).nb_modifications() == 0
+    assert TextDifferences([ModifiedLine("xxxx", _parse_mask(""), "yyyy", _parse_mask(""))]).nb_modifications() == 1
