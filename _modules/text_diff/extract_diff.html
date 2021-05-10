@@ -7,12 +7,14 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>text_diff.extract_diff &mdash; Text Diff 0.0.2 documentation</title>
+  <title>text_diff.extract_diff &mdash; Text Diff 0.0.3 documentation</title>
   
 
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
 
   
   
@@ -29,6 +31,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
@@ -61,7 +64,7 @@
             
             
               <div class="version">
-                0.0.2
+                0.0.3
               </div>
             
           
@@ -233,7 +236,10 @@
 
 <div class="viewcode-block" id="TextDifferences"><a class="viewcode-back" href="../../text_diff.html#text_diff.extract_diff.TextDifferences">[docs]</a><span class="nd">@dataclass</span>
 <span class="k">class</span> <span class="nc">TextDifferences</span><span class="p">:</span>
-    <span class="n">diff_lines</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">DiffLine</span><span class="p">]</span></div>
+    <span class="n">diff_lines</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">DiffLine</span><span class="p">]</span>
+
+<div class="viewcode-block" id="TextDifferences.nb_modifications"><a class="viewcode-back" href="../../text_diff.html#text_diff.extract_diff.TextDifferences.nb_modifications">[docs]</a>    <span class="k">def</span> <span class="nf">nb_modifications</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">([</span><span class="n">line</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">diff_lines</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">UnchangedLine</span><span class="p">)])</span></div></div>
 
 
 <span class="k">def</span> <span class="nf">_extract_first_chars</span><span class="p">(</span><span class="n">strs</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>

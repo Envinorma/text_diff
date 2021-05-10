@@ -7,12 +7,14 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>text_diff package &mdash; Text Diff 0.0.2 documentation</title>
+  <title>text_diff package &mdash; Text Diff 0.0.3 documentation</title>
   
 
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
 
   
   
@@ -29,6 +31,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
@@ -63,7 +66,7 @@
             
             
               <div class="version">
-                0.0.2
+                0.0.3
               </div>
             
           
@@ -196,116 +199,121 @@
 <div class="section" id="module-text_diff.extract_diff">
 <span id="text-diff-extract-diff-module"></span><h2>text_diff.extract_diff module<a class="headerlink" href="#module-text_diff.extract_diff" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
-<dt id="text_diff.extract_diff.AddedLine">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">text_diff.extract_diff.</span></code><code class="sig-name descname"><span class="pre">AddedLine</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/text_diff/extract_diff.html#AddedLine"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#text_diff.extract_diff.AddedLine" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="text_diff.extract_diff.AddedLine">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">text_diff.extract_diff.</span></span><span class="sig-name descname"><span class="pre">AddedLine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/text_diff/extract_diff.html#AddedLine"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#text_diff.extract_diff.AddedLine" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="py attribute">
-<dt id="text_diff.extract_diff.AddedLine.content">
-<code class="sig-name descname"><span class="pre">content</span></code><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="headerlink" href="#text_diff.extract_diff.AddedLine.content" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="text_diff.extract_diff.AddedLine.content">
+<span class="sig-name descname"><span class="pre">content</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="headerlink" href="#text_diff.extract_diff.AddedLine.content" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
-<dt id="text_diff.extract_diff.EditOperation">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">text_diff.extract_diff.</span></code><code class="sig-name descname"><span class="pre">EditOperation</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/text_diff/extract_diff.html#EditOperation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#text_diff.extract_diff.EditOperation" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="text_diff.extract_diff.EditOperation">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">text_diff.extract_diff.</span></span><span class="sig-name descname"><span class="pre">EditOperation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/text_diff/extract_diff.html#EditOperation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#text_diff.extract_diff.EditOperation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></p>
 <p>An enumeration.</p>
 <dl class="py attribute">
-<dt id="text_diff.extract_diff.EditOperation.ADDITION">
-<code class="sig-name descname"><span class="pre">ADDITION</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'+'</span></em><a class="headerlink" href="#text_diff.extract_diff.EditOperation.ADDITION" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="text_diff.extract_diff.EditOperation.ADDITION">
+<span class="sig-name descname"><span class="pre">ADDITION</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'+'</span></em><a class="headerlink" href="#text_diff.extract_diff.EditOperation.ADDITION" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="text_diff.extract_diff.EditOperation.DELETION">
-<code class="sig-name descname"><span class="pre">DELETION</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'-'</span></em><a class="headerlink" href="#text_diff.extract_diff.EditOperation.DELETION" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="text_diff.extract_diff.EditOperation.DELETION">
+<span class="sig-name descname"><span class="pre">DELETION</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'-'</span></em><a class="headerlink" href="#text_diff.extract_diff.EditOperation.DELETION" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="text_diff.extract_diff.EditOperation.MUTATION">
-<code class="sig-name descname"><span class="pre">MUTATION</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'^'</span></em><a class="headerlink" href="#text_diff.extract_diff.EditOperation.MUTATION" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="text_diff.extract_diff.EditOperation.MUTATION">
+<span class="sig-name descname"><span class="pre">MUTATION</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'^'</span></em><a class="headerlink" href="#text_diff.extract_diff.EditOperation.MUTATION" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="text_diff.extract_diff.EditOperation.UNCHANGED">
-<code class="sig-name descname"><span class="pre">UNCHANGED</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'</span> <span class="pre">'</span></em><a class="headerlink" href="#text_diff.extract_diff.EditOperation.UNCHANGED" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt id="text_diff.extract_diff.Mask">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">text_diff.extract_diff.</span></code><code class="sig-name descname"><span class="pre">Mask</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">elements</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#text_diff.extract_diff.EditOperation" title="text_diff.extract_diff.EditOperation"><span class="pre">text_diff.extract_diff.EditOperation</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/text_diff/extract_diff.html#Mask"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#text_diff.extract_diff.Mask" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<dl class="py attribute">
-<dt id="text_diff.extract_diff.Mask.elements">
-<code class="sig-name descname"><span class="pre">elements</span></code><em class="property"><span class="pre">:</span> <span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#text_diff.extract_diff.EditOperation" title="text_diff.extract_diff.EditOperation"><span class="pre">text_diff.extract_diff.EditOperation</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#text_diff.extract_diff.Mask.elements" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="text_diff.extract_diff.EditOperation.UNCHANGED">
+<span class="sig-name descname"><span class="pre">UNCHANGED</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'</span> <span class="pre">'</span></em><a class="headerlink" href="#text_diff.extract_diff.EditOperation.UNCHANGED" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
-<dt id="text_diff.extract_diff.ModifiedLine">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">text_diff.extract_diff.</span></code><code class="sig-name descname"><span class="pre">ModifiedLine</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content_before</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_before</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#text_diff.extract_diff.Mask" title="text_diff.extract_diff.Mask"><span class="pre">text_diff.extract_diff.Mask</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">content_after</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_after</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#text_diff.extract_diff.Mask" title="text_diff.extract_diff.Mask"><span class="pre">text_diff.extract_diff.Mask</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/text_diff/extract_diff.html#ModifiedLine"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#text_diff.extract_diff.ModifiedLine" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="text_diff.extract_diff.Mask">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">text_diff.extract_diff.</span></span><span class="sig-name descname"><span class="pre">Mask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">elements</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#text_diff.extract_diff.EditOperation" title="text_diff.extract_diff.EditOperation"><span class="pre">text_diff.extract_diff.EditOperation</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/text_diff/extract_diff.html#Mask"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#text_diff.extract_diff.Mask" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="py attribute">
-<dt id="text_diff.extract_diff.ModifiedLine.content_after">
-<code class="sig-name descname"><span class="pre">content_after</span></code><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="headerlink" href="#text_diff.extract_diff.ModifiedLine.content_after" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt id="text_diff.extract_diff.ModifiedLine.content_before">
-<code class="sig-name descname"><span class="pre">content_before</span></code><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="headerlink" href="#text_diff.extract_diff.ModifiedLine.content_before" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt id="text_diff.extract_diff.ModifiedLine.mask_after">
-<code class="sig-name descname"><span class="pre">mask_after</span></code><em class="property"><span class="pre">:</span> <a class="reference internal" href="#text_diff.extract_diff.Mask" title="text_diff.extract_diff.Mask"><span class="pre">text_diff.extract_diff.Mask</span></a></em><a class="headerlink" href="#text_diff.extract_diff.ModifiedLine.mask_after" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt id="text_diff.extract_diff.ModifiedLine.mask_before">
-<code class="sig-name descname"><span class="pre">mask_before</span></code><em class="property"><span class="pre">:</span> <a class="reference internal" href="#text_diff.extract_diff.Mask" title="text_diff.extract_diff.Mask"><span class="pre">text_diff.extract_diff.Mask</span></a></em><a class="headerlink" href="#text_diff.extract_diff.ModifiedLine.mask_before" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="text_diff.extract_diff.Mask.elements">
+<span class="sig-name descname"><span class="pre">elements</span></span><em class="property"><span class="pre">:</span> <span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#text_diff.extract_diff.EditOperation" title="text_diff.extract_diff.EditOperation"><span class="pre">text_diff.extract_diff.EditOperation</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#text_diff.extract_diff.Mask.elements" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
-<dt id="text_diff.extract_diff.RemovedLine">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">text_diff.extract_diff.</span></code><code class="sig-name descname"><span class="pre">RemovedLine</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/text_diff/extract_diff.html#RemovedLine"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#text_diff.extract_diff.RemovedLine" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="text_diff.extract_diff.ModifiedLine">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">text_diff.extract_diff.</span></span><span class="sig-name descname"><span class="pre">ModifiedLine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content_before</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_before</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#text_diff.extract_diff.Mask" title="text_diff.extract_diff.Mask"><span class="pre">text_diff.extract_diff.Mask</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">content_after</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_after</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#text_diff.extract_diff.Mask" title="text_diff.extract_diff.Mask"><span class="pre">text_diff.extract_diff.Mask</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/text_diff/extract_diff.html#ModifiedLine"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#text_diff.extract_diff.ModifiedLine" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="py attribute">
-<dt id="text_diff.extract_diff.RemovedLine.content">
-<code class="sig-name descname"><span class="pre">content</span></code><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="headerlink" href="#text_diff.extract_diff.RemovedLine.content" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="text_diff.extract_diff.ModifiedLine.content_after">
+<span class="sig-name descname"><span class="pre">content_after</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="headerlink" href="#text_diff.extract_diff.ModifiedLine.content_after" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="text_diff.extract_diff.ModifiedLine.content_before">
+<span class="sig-name descname"><span class="pre">content_before</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="headerlink" href="#text_diff.extract_diff.ModifiedLine.content_before" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="text_diff.extract_diff.ModifiedLine.mask_after">
+<span class="sig-name descname"><span class="pre">mask_after</span></span><em class="property"><span class="pre">:</span> <a class="reference internal" href="#text_diff.extract_diff.Mask" title="text_diff.extract_diff.Mask"><span class="pre">text_diff.extract_diff.Mask</span></a></em><a class="headerlink" href="#text_diff.extract_diff.ModifiedLine.mask_after" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="text_diff.extract_diff.ModifiedLine.mask_before">
+<span class="sig-name descname"><span class="pre">mask_before</span></span><em class="property"><span class="pre">:</span> <a class="reference internal" href="#text_diff.extract_diff.Mask" title="text_diff.extract_diff.Mask"><span class="pre">text_diff.extract_diff.Mask</span></a></em><a class="headerlink" href="#text_diff.extract_diff.ModifiedLine.mask_before" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
-<dt id="text_diff.extract_diff.TextDifferences">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">text_diff.extract_diff.</span></code><code class="sig-name descname"><span class="pre">TextDifferences</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">diff_lines</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#text_diff.extract_diff.RemovedLine" title="text_diff.extract_diff.RemovedLine"><span class="pre">text_diff.extract_diff.RemovedLine</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="#text_diff.extract_diff.AddedLine" title="text_diff.extract_diff.AddedLine"><span class="pre">text_diff.extract_diff.AddedLine</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="#text_diff.extract_diff.ModifiedLine" title="text_diff.extract_diff.ModifiedLine"><span class="pre">text_diff.extract_diff.ModifiedLine</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="#text_diff.extract_diff.UnchangedLine" title="text_diff.extract_diff.UnchangedLine"><span class="pre">text_diff.extract_diff.UnchangedLine</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/text_diff/extract_diff.html#TextDifferences"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#text_diff.extract_diff.TextDifferences" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="text_diff.extract_diff.RemovedLine">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">text_diff.extract_diff.</span></span><span class="sig-name descname"><span class="pre">RemovedLine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/text_diff/extract_diff.html#RemovedLine"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#text_diff.extract_diff.RemovedLine" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="py attribute">
-<dt id="text_diff.extract_diff.TextDifferences.diff_lines">
-<code class="sig-name descname"><span class="pre">diff_lines</span></code><em class="property"><span class="pre">:</span> <span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#text_diff.extract_diff.RemovedLine" title="text_diff.extract_diff.RemovedLine"><span class="pre">text_diff.extract_diff.RemovedLine</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="#text_diff.extract_diff.AddedLine" title="text_diff.extract_diff.AddedLine"><span class="pre">text_diff.extract_diff.AddedLine</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="#text_diff.extract_diff.ModifiedLine" title="text_diff.extract_diff.ModifiedLine"><span class="pre">text_diff.extract_diff.ModifiedLine</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="#text_diff.extract_diff.UnchangedLine" title="text_diff.extract_diff.UnchangedLine"><span class="pre">text_diff.extract_diff.UnchangedLine</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#text_diff.extract_diff.TextDifferences.diff_lines" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="text_diff.extract_diff.RemovedLine.content">
+<span class="sig-name descname"><span class="pre">content</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="headerlink" href="#text_diff.extract_diff.RemovedLine.content" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
-<dt id="text_diff.extract_diff.UnchangedLine">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">text_diff.extract_diff.</span></code><code class="sig-name descname"><span class="pre">UnchangedLine</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/text_diff/extract_diff.html#UnchangedLine"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#text_diff.extract_diff.UnchangedLine" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="text_diff.extract_diff.TextDifferences">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">text_diff.extract_diff.</span></span><span class="sig-name descname"><span class="pre">TextDifferences</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">diff_lines</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#text_diff.extract_diff.RemovedLine" title="text_diff.extract_diff.RemovedLine"><span class="pre">text_diff.extract_diff.RemovedLine</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="#text_diff.extract_diff.AddedLine" title="text_diff.extract_diff.AddedLine"><span class="pre">text_diff.extract_diff.AddedLine</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="#text_diff.extract_diff.ModifiedLine" title="text_diff.extract_diff.ModifiedLine"><span class="pre">text_diff.extract_diff.ModifiedLine</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="#text_diff.extract_diff.UnchangedLine" title="text_diff.extract_diff.UnchangedLine"><span class="pre">text_diff.extract_diff.UnchangedLine</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/text_diff/extract_diff.html#TextDifferences"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#text_diff.extract_diff.TextDifferences" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="py attribute">
-<dt id="text_diff.extract_diff.UnchangedLine.content">
-<code class="sig-name descname"><span class="pre">content</span></code><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="headerlink" href="#text_diff.extract_diff.UnchangedLine.content" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="text_diff.extract_diff.TextDifferences.diff_lines">
+<span class="sig-name descname"><span class="pre">diff_lines</span></span><em class="property"><span class="pre">:</span> <span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#text_diff.extract_diff.RemovedLine" title="text_diff.extract_diff.RemovedLine"><span class="pre">text_diff.extract_diff.RemovedLine</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="#text_diff.extract_diff.AddedLine" title="text_diff.extract_diff.AddedLine"><span class="pre">text_diff.extract_diff.AddedLine</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="#text_diff.extract_diff.ModifiedLine" title="text_diff.extract_diff.ModifiedLine"><span class="pre">text_diff.extract_diff.ModifiedLine</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="#text_diff.extract_diff.UnchangedLine" title="text_diff.extract_diff.UnchangedLine"><span class="pre">text_diff.extract_diff.UnchangedLine</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#text_diff.extract_diff.TextDifferences.diff_lines" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="text_diff.extract_diff.TextDifferences.nb_modifications">
+<span class="sig-name descname"><span class="pre">nb_modifications</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">int</span><a class="reference internal" href="_modules/text_diff/extract_diff.html#TextDifferences.nb_modifications"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#text_diff.extract_diff.TextDifferences.nb_modifications" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="text_diff.extract_diff.UnchangedLine">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">text_diff.extract_diff.</span></span><span class="sig-name descname"><span class="pre">UnchangedLine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/text_diff/extract_diff.html#UnchangedLine"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#text_diff.extract_diff.UnchangedLine" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="text_diff.extract_diff.UnchangedLine.content">
+<span class="sig-name descname"><span class="pre">content</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="headerlink" href="#text_diff.extract_diff.UnchangedLine.content" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py function">
-<dt id="text_diff.extract_diff.text_differences">
-<code class="sig-prename descclassname"><span class="pre">text_diff.extract_diff.</span></code><code class="sig-name descname"><span class="pre">text_differences</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">original_text</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_text_version</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#text_diff.extract_diff.TextDifferences" title="text_diff.extract_diff.TextDifferences"><span class="pre">text_diff.extract_diff.TextDifferences</span></a><a class="reference internal" href="_modules/text_diff/extract_diff.html#text_differences"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#text_diff.extract_diff.text_differences" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="text_diff.extract_diff.text_differences">
+<span class="sig-prename descclassname"><span class="pre">text_diff.extract_diff.</span></span><span class="sig-name descname"><span class="pre">text_differences</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">original_text</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_text_version</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#text_diff.extract_diff.TextDifferences" title="text_diff.extract_diff.TextDifferences"><span class="pre">text_diff.extract_diff.TextDifferences</span></a><a class="reference internal" href="_modules/text_diff/extract_diff.html#text_differences"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#text_diff.extract_diff.text_differences" title="Permalink to this definition">¶</a></dt>
 <dd><p>Builds text differences from input texts.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -328,8 +336,8 @@
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-text_diff" title="Permalink to this headline">¶</a></h2>
 <p>Top-level package for Text Diff.</p>
 <dl class="py function">
-<dt id="text_diff.get_module_version">
-<code class="sig-prename descclassname"><span class="pre">text_diff.</span></code><code class="sig-name descname"><span class="pre">get_module_version</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/text_diff.html#get_module_version"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#text_diff.get_module_version" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="text_diff.get_module_version">
+<span class="sig-prename descclassname"><span class="pre">text_diff.</span></span><span class="sig-name descname"><span class="pre">get_module_version</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/text_diff.html#get_module_version"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#text_diff.get_module_version" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>
