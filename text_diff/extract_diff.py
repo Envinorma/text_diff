@@ -57,6 +57,9 @@ DiffLine = Union[RemovedLine, AddedLine, ModifiedLine, UnchangedLine]
 class TextDifferences:
     diff_lines: List[DiffLine]
 
+    def nb_modifications(self) -> int:
+        return len([line for line in self.diff_lines if not isinstance(line, UnchangedLine)])
+
 
 def _extract_first_chars(strs: List[str]) -> str:
     return ''.join([x[:1] for x in strs])
