@@ -6,6 +6,7 @@ from text_diff.extract_diff import (
     UnchangedLine,
     _apply_mask,
     _build_difflines,
+    _cleanup_text,
     _empty_mask,
     _is_modified_line_consistent,
     _parse_mask,
@@ -66,6 +67,18 @@ def test_text_differences():
         ]
     )
     assert res == expected
+
+
+def test_text_difference_2():
+    assert text_differences(['\t123'], ['\t123']).diff_lines == [UnchangedLine('  123')]
+    assert text_differences(['\n123'], ['\n123']).diff_lines == [UnchangedLine('123')]
+
+
+def test_cleanup_text():
+    assert _cleanup_text([]) == []
+    assert _cleanup_text(['\n']) == ['']
+    assert _cleanup_text(['\t']) == ['  ']
+    assert _cleanup_text(['foo']) == ['foo']
 
 
 def test_build_difflines():

@@ -151,6 +151,10 @@ def _build_difflines(difflines: List[str]) -> List[DiffLine]:
     return res
 
 
+def _cleanup_text(lines: List[str]) -> List[str]:
+    return [line.replace('\n', '').replace('\t', '  ') for line in lines]
+
+
 def text_differences(original_text: List[str], new_text_version: List[str]) -> TextDifferences:
     """
     Builds text differences from input texts.
@@ -167,5 +171,5 @@ def text_differences(original_text: List[str], new_text_version: List[str]) -> T
     text_differences: TextDifferences
         TextDifferences object built on top of diffline output
     """
-    diffs = list(difflib.Differ().compare(original_text, new_text_version))
+    diffs = list(difflib.Differ().compare(_cleanup_text(original_text), _cleanup_text(new_text_version)))
     return TextDifferences(_build_difflines(diffs))
